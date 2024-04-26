@@ -46,6 +46,10 @@ def compute_z(
         for context_types in context_templates
         for context in context_types
     ], ["{} is a"]
+    if 'rephrase_sentences_' in request: #When there is this item in the request
+        rephrase_prompts = [rephrase_sentence + tok.decode(target_ids[:-1]) for rephrase_sentence in request['rephrase_sentences_']]
+        rewriting_prompts += rephrase_prompts
+
     all_prompts = rewriting_prompts + kl_prompts
 
     input_tok = tok(

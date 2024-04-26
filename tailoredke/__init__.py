@@ -1,1 +1,1 @@
-from .TailoredKE import TAILOREDKEHyperParams, apply_tailoredke_to_model
+from .tailoredke import TAILOREDKEHyperParams, apply_tailoredke_to_model
